@@ -6,9 +6,10 @@ export default function Header() {
     
     return (
         <div className={styles.headerContainer}>
+            {/* Logo links to home page */}
             <Link href="/">
                 <a>
-                <Image src="/Recipe-Keeper-logo.svg" alt="logo" width="220" height="120" layout="intrinsic" className={styles.logo}/>
+                <Image src="/Recipe-Keeper-logo.svg" alt="logo" width="220" height="150" layout="intrinsic"/>
                 </a>
             </Link>
         </div>

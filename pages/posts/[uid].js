@@ -1,4 +1,6 @@
+// Dynamic routes file
 //pages/[uid].js
+
 import React from 'react'
 import { Client } from '../../prismic-configuration'
 import Prismic from '@prismicio/client'
@@ -6,8 +8,9 @@ import { RichText } from "prismic-reactjs";
 import styles from '../../styles/Post.module.css'
 import Header from '../../components/Header';
 
-
+// Passing in data from the props object
 export default function Post({ data }) {
+
   return (
 
     <React.Fragment>
@@ -43,29 +46,45 @@ export default function Post({ data }) {
 }
 
 
+// Exporting static props function so Next.js will pre-render each 
+// page at build time using the props returned.
+// Passing in params from the static paths function, params contains 
+// the route parameters for pages using dynamic routes.
 export async function getStaticProps({params}) {
   const client = Client();
+  // Fetching data from the API using Prismic client getByUID
   const { data } = (await client.getByUID('recipe', params.uid))
 
+  // Passing the data receved to the props object 
   return {
     props: {
       data
     },
+    // Revalidating at most once every second to re-render the page 
+    // in the background as traffic comes in.
+    revalidate: 1,
   };
 }
 
+// getStaticPaths statically pre-renders all the paths specified, 
+// in this case the uid.
 export async function getStaticPaths() {
   const client = Client();
+  // Fetching data from the API using Prismic client query
    const { results } = await client.query(
+    // Querying by document type
      Prismic.Predicates.at("document.type", "recipe")
    )
 
+  // Get the paths we want to pre-render based on results
   const paths = results.map(post => ({
     params: {
       uid: post.uid,
     },
   }))
 
+  // Pre-render only these paths at build time.
+  // fallback: false, means other routes should return 404
    return {
     paths,
     fallback: false,

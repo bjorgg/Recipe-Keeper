@@ -1,3 +1,5 @@
+/* Styling of the recipe pages */
+
 .recipeContainer {
     margin: auto;
     width: 60%;
@@ -6,7 +8,6 @@
     padding: 3rem;
     margin-bottom: 3rem;
 }
-
 
 .postImage {
     object-fit: cover;
@@ -23,14 +24,12 @@
     width: 100%;
 }
 
-
 .postIngredients {
     background-color: #EEEEEE;
     padding: .5rem 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: .4rem;
 }
-
 
 .postInstructions {
     background-color: #EEEEEE;

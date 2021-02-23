@@ -1,5 +1,8 @@
+// Configuring Prismic Client to interact with the API
+
 import Prismic from '@prismicio/client'
 
+// Access information stored in enviroment variables
 export const apiEndpoint = process.env.NEXT_PUBLIC_PRISMIC_URL
 export const accessToken = process.env.NEXT_PUBLIC_PRISMIC_TOKEN
 
