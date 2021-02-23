@@ -2,9 +2,12 @@
 
 import Prismic from '@prismicio/client'
 
+// const prismicRepo = process.env.PRISMIC_REPOSITORY
+// export const apiEndpoint = `https://${prismicRepo}.cdn.prismic.io/api/v2`
+
 // Access information stored in enviroment variables
-export const apiEndpoint = process.env.NEXT_PUBLIC_PRISMIC_URL
-export const accessToken = process.env.NEXT_PUBLIC_PRISMIC_TOKEN
+export const apiEndpoint = process.env.PRISMIC_URL
+export const accessToken = process.env.PRISMIC_TOKEN
 
 // Client method to query documents from the Prismic repo
 export const Client = (req = null) => (
