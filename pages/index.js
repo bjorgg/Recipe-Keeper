@@ -5,10 +5,27 @@ import { Client } from '../prismic-configuration'
 import Prismic from '@prismicio/client'
 import { RichText } from "prismic-reactjs";
 import Header from '../components/Header';
+// import {useEffect, useState} from "react"
 
 // Passing in posts from props to this page component
 export default function Home({ posts }) {
   console.log(posts)
+
+  // const [tags, setTags] = useState([])
+
+  // useEffect(() => {  
+  //   // const prismicURL = `https://${process.env.PRISMIC_REPOSITORY}.cdn.prismic.io/api/v2?access_token=${process.env.PRISMIC_TOKEN}`
+  //   // const prismicURL = process.env.NEXT_PUBLIC_PRISMIC_URL
+  //   const queryTags = async () => {
+  //     const res = await fetch(prismicURL);
+  //     const prismicApi = await res.json()
+  //     const tags = prismicApi.tags;
+  //     console.log(prismicApi)
+  //     console.log(tags)
+  //     setTags(prismicApi.tags)
+  //   }
+  //   queryTags();
+  // }, [])
 
   return (
     <div className={styles.container}>
@@ -32,7 +49,6 @@ export default function Home({ posts }) {
 
           ))}
       </div>
-
     </div>
   )
 }
