@@ -19,7 +19,7 @@ I created two webhooks for this application, both will trigger deployment and a 
 
 Here is a link to screenshots of the webhooks
 
-> [Screenshots]()
+> [Screenshots](https://ibb.co/cxNL7b7)
 
 ## Live version
 
